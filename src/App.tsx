@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import './App.css'
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ToolsAndTechs from './components/ToolsAndTechs';
 import type { Tool } from './components/ToolsAndTechs';
-import ImageSlider, { type ImageSliderProps } from './components/ImageSlider';
+import ImageSlider, { type ImageSliderProps } from './components/ImageSlider'
 import CandidateCard from './components/CandidateCard';
+import FunctionSelector from './components/FunctionSelector';
 
 
 const projectTools: Tool[] = [
@@ -25,8 +27,17 @@ const projectImages: ImageSliderProps[] = [
   },
 ];
 
+const functionItems = [
+  { id: 1, label: "Find Duplicated Items" },
+  { id: 2, label: "Delay to display" },
+  { id: 3, label: "React Flex Page" },
+  { id: 4, label: "Function" },
+  { id: 5, label: "Function" },
+];
+
 
 function App() {
+  const [selectedFunction, setSelectedFunction] = useState(2);
 
   return (
     <>
@@ -45,8 +56,12 @@ function App() {
                 <HiOutlineArrowTopRightOnSquare className="inline ml-1" />
               </a> 
             </div>
-            <div className="bg-gray-200 p-4 mt-4">
-              Menu
+            <div className="bg-gray-200 p-4 mt-4 rounded-md">
+              <FunctionSelector
+                items={functionItems}
+                selectedId={selectedFunction}
+                onSelect={setSelectedFunction}
+              />
             </div>
           </div>
           <div className="w-[70%]">
