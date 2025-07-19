@@ -4,12 +4,26 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ToolsAndTechs from './components/ToolsAndTechs';
 import type { Tool } from './components/ToolsAndTechs';
+import ImageSlider, { type ImageSliderProps } from './components/ImageSlider';
+
 
 const projectTools: Tool[] = [
   { name: 'Figma', url: 'https://www.figma.com', description: 'A collaborative interface design tool.' },
   { name: 'React', url: 'https://react.dev', description: 'The library for web and native user interfaces.' },
   { name: 'VsCode', url: 'https://code.visualstudio.com/', description: 'A powerful, lightweight code editor.' },
 ];
+
+const projectImages: ImageSliderProps[] = [
+  {
+    url: '/carousel-main/image-01.jpg',
+    description: 'A beautiful view of the mountains.',
+  },
+  {
+    url: '/carousel-main/image-02.jpg',
+    description: 'A serene lake surrounded by trees.',
+  },
+];
+
 
 function App() {
 
@@ -46,7 +60,7 @@ function App() {
 
         <div className="w-full flex gap-4">
           <div className="w-[60%] bg-gray-200 p-4 mt-4">
-            Images
+             <ImageSlider images={projectImages} />
           </div>
           <div className="w-[40%] bg-gray-200 p-4 mt-4">
             <ToolsAndTechs title="Tools and Techs used" tools={projectTools} />
