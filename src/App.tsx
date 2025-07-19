@@ -5,7 +5,6 @@ import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ToolsAndTechs from './components/ToolsAndTechs';
-import type { Tool } from './components/ToolsAndTechs';
 import ImageSlider, { type ImageSliderProps } from './components/ImageSlider'
 import CandidateCard from './components/CandidateCard';
 import FunctionList from './components/FunctionList';
@@ -13,11 +12,6 @@ import FunctionList from './components/FunctionList';
 const FindDuplicatedItems = lazy(() => import('./pages/findDuplicatedItems'));
 const ArrayItemsWithDelay = lazy(() => import('./pages/arrayItemsWithDelay'));
 
-const projectTools: Tool[] = [
-  { name: 'Figma', url: 'https://www.figma.com', description: 'A collaborative interface design tool.' },
-  { name: 'React', url: 'https://react.dev', description: 'The library for web and native user interfaces.' },
-  { name: 'VsCode', url: 'https://code.visualstudio.com/', description: 'A powerful, lightweight code editor.' },
-];
 
 const projectImages: ImageSliderProps[] = [
   {
@@ -73,7 +67,7 @@ function App() {
             <ImageSlider images={projectImages} />
           </div>
           <div className="w-[40%] bg-gray-200 p-4 mt-4">
-            <ToolsAndTechs title="Tools and Techs used" tools={projectTools} />
+            <ToolsAndTechs />
           </div>
         </div>
       </div>

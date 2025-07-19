@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 
 export interface Tool {
@@ -7,12 +6,15 @@ export interface Tool {
   description: string;
 }
 
-interface ToolsAndTechsProps {
-  title: string;
-  tools: Tool[];
-}
+const ToolsAndTechs = () => {
+  const tools: Tool[] = [
+    { name: 'Figma', url: 'https://www.figma.com', description: 'A collaborative interface design tool.' },
+    { name: 'React', url: 'https://react.dev', description: 'The library for web and native user interfaces.' },
+    { name: 'VsCode', url: 'https://code.visualstudio.com/', description: 'A powerful, lightweight code editor.' },
+  ];
 
-const ToolsAndTechs: FC<ToolsAndTechsProps> = ({ title, tools }) => {
+  const title = "Tools and Techs used";
+
   return (
     <div>
       <h2 className="text-lg font-semibold mb-4 text-gray-700">{title}</h2>
