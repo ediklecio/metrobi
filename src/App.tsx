@@ -31,7 +31,7 @@ function App() {
     <>
       <Header />
 
-      <div className='container m-auto p-8'>
+      <div className='max-w-5xl m-auto p-8'>
         <div className="flex gap-4">
           <div className="w-[30%]">
             <div className="bg-gray-200 p-4 text-gray-500 rounded-md">

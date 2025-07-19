@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => (
   <div className='header bg-gray-100 text-gray-500'>
-    <div className="container flex">
+    <div className="container max-w-5xl m-auto flex">
       <h1 className='logo'>
         <img
           src="./src/assets/logo.webp"
