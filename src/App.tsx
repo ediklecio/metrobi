@@ -2,6 +2,14 @@ import './App.css'
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ToolsAndTechs from './components/ToolsAndTechs';
+import type { Tool } from './components/ToolsAndTechs';
+
+const projectTools: Tool[] = [
+  { name: 'Figma', url: 'https://www.figma.com', description: 'A collaborative interface design tool.' },
+  { name: 'React', url: 'https://react.dev', description: 'The library for web and native user interfaces.' },
+  { name: 'VsCode', url: 'https://code.visualstudio.com/', description: 'A powerful, lightweight code editor.' },
+];
 
 function App() {
 
@@ -41,7 +49,7 @@ function App() {
             Images
           </div>
           <div className="w-[40%] bg-gray-200 p-4 mt-4">
-            Related links
+            <ToolsAndTechs title="Tools and Techs used" tools={projectTools} />
           </div>
         </div>
       </div>
