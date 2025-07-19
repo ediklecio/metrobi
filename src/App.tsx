@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import ToolsAndTechs from './components/ToolsAndTechs';
 import type { Tool } from './components/ToolsAndTechs';
 import ImageSlider, { type ImageSliderProps } from './components/ImageSlider';
+import CandidateCard from './components/CandidateCard';
 
 
 const projectTools: Tool[] = [
@@ -52,8 +53,8 @@ function App() {
             <div className="bg-gray-200 p-4">
               Content
             </div>
-            <div className="bg-gray-200 p-4 mt-4">
-              About
+            <div className="mt-4">
+              <CandidateCard />
             </div>
           </div>
         </div>
