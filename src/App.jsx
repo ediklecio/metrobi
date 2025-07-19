@@ -1,4 +1,5 @@
 import './App.css'
+import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -11,8 +12,15 @@ function App() {
       <div className='container m-auto py-8'>
         <div className="flex gap-4">
           <div className="w-[30%]">
-            <div className="bg-gray-200 p-4">
-              About
+            <div className="bg-gray-200 p-4 text-gray-500 rounded-md">
+              <p>This is a Metrobi technical challenge made with React and a lot of TypeScript by Ediklecio.</p>
+              <a
+                href="https://github.com/ediklecio/metrobi"
+                className="block mt-4 text-blue-600 hover:underline hover:text-blue-800 transition-colors"
+              >
+                github.com/ediklecio/metrobi
+                <HiOutlineArrowTopRightOnSquare className="inline ml-1" />
+              </a> 
             </div>
             <div className="bg-gray-200 p-4 mt-4">
               Menu
@@ -33,7 +41,7 @@ function App() {
             Images
           </div>
           <div className="w-[30%] bg-gray-200 p-4 mt-4">
-            About
+            Related links
           </div>
         </div>
       </div>
