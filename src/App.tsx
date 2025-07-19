@@ -8,6 +8,7 @@ import type { Tool } from './components/ToolsAndTechs';
 import ImageSlider, { type ImageSliderProps } from './components/ImageSlider'
 import CandidateCard from './components/CandidateCard';
 import FunctionSelector from './components/FunctionSelector';
+import FindDuplicatedItems from './pages/findDuplicatedItems';
 
 
 const projectTools: Tool[] = [
@@ -35,7 +36,6 @@ const functionItems = [
   { id: 5, label: "Function" },
 ];
 
-
 function App() {
   const [selectedFunction, setSelectedFunction] = useState(2);
 
@@ -54,7 +54,7 @@ function App() {
               >
                 github.com/ediklecio/metrobi
                 <HiOutlineArrowTopRightOnSquare className="inline ml-1" />
-              </a> 
+              </a>
             </div>
             <div className="bg-gray-200 p-4 mt-4 rounded-md">
               <FunctionSelector
@@ -64,9 +64,9 @@ function App() {
               />
             </div>
           </div>
-          <div className="w-[70%]">
-            <div className="bg-gray-200 p-4">
-              Content
+          <div className="w-[70%] flex flex-col gap-4">
+            <div className="bg-gray-200 p-4 rounded-md">
+              <FindDuplicatedItems />
             </div>
             <div className="mt-4">
               <CandidateCard />
@@ -76,7 +76,7 @@ function App() {
 
         <div className="w-full flex gap-4">
           <div className="w-[60%] bg-gray-200 p-4 mt-4">
-             <ImageSlider images={projectImages} />
+            <ImageSlider images={projectImages} />
           </div>
           <div className="w-[40%] bg-gray-200 p-4 mt-4">
             <ToolsAndTechs title="Tools and Techs used" tools={projectTools} />
