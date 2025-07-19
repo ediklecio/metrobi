@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import Header from './components/Header'
@@ -8,6 +8,7 @@ import ToolsAndTechs from './components/ToolsAndTechs';
 import type { Tool } from './components/ToolsAndTechs';
 import ImageSlider, { type ImageSliderProps } from './components/ImageSlider'
 import CandidateCard from './components/CandidateCard';
+import FunctionList from './components/FunctionList';
 
 const FindDuplicatedItems = lazy(() => import('./pages/findDuplicatedItems'));
 const ArrayItemsWithDelay = lazy(() => import('./pages/arrayItemsWithDelay'));
@@ -29,11 +30,6 @@ const projectImages: ImageSliderProps[] = [
   },
 ];
 
-const functionItems = [
-  { id: 1, label: "Find Duplicated Items", path: "/find-duplicated-items" },
-  { id: 2, label: "Delay to display", path: "/array-items-with-delay" },
-];
-
 function App() {
   return (
     <BrowserRouter>
@@ -53,25 +49,7 @@ function App() {
               </a>
             </div>
             <div className="bg-gray-200 p-4 mt-4 rounded-md">
-              <nav>
-                <ul className="space-y-2">
-                  {functionItems.map((item) => (
-                    <li key={item.id}>
-                      <NavLink
-                        to={item.path}
-                        className={({ isActive }) =>
-                          `block p-2 rounded-md transition-colors ${isActive
-                            ? 'bg-blue-500 text-white'
-                            : 'bg-gray-300 hover:bg-gray-400'
-                          }`
-                        }
-                      >
-                        {item.label}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
+              <FunctionList />
             </div>
           </div>
           <div className="w-[70%] flex flex-col gap-4">
