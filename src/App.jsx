@@ -9,7 +9,7 @@ function App() {
     <>
       <Header />
 
-      <div className='container m-auto py-8'>
+      <div className='container m-auto p-8'>
         <div className="flex gap-4">
           <div className="w-[30%]">
             <div className="bg-gray-200 p-4 text-gray-500 rounded-md">
@@ -37,10 +37,10 @@ function App() {
         </div>
 
         <div className="w-full flex gap-4">
-          <div className="w-[70%] bg-gray-200 p-4 mt-4">
+          <div className="w-[60%] bg-gray-200 p-4 mt-4">
             Images
           </div>
-          <div className="w-[30%] bg-gray-200 p-4 mt-4">
+          <div className="w-[40%] bg-gray-200 p-4 mt-4">
             Related links
           </div>
         </div>
