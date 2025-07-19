@@ -1,20 +1,12 @@
 import './App.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <>
-      <div className='header bg-gray-100 text-gray-500'>
-        <div className="container flex">
-          <h1 className='logo'> <img
-            src="./src/assets/logo.webp"
-            alt="Imagem Responsiva"
-            className="w-full h-auto"
-          /></h1>
-          <span>|</span>
-          <span>Tech Challenger</span>
-        </div>
-      </div>
+      <Header />
 
       <div className='container m-auto py-8'>
         <div className="flex gap-4">
@@ -46,9 +38,7 @@ function App() {
         </div>
       </div>
 
-      <div className='footer bg-primary text-center text-white'>
-        &copy; 2025 - Ediklecio
-      </div>
+      <Footer />
     </>
   )
 }
