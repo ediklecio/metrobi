@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { Suspense, lazy } from 'react';
+import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import './App.css'
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import Header from './components/Header'
@@ -7,9 +8,9 @@ import ToolsAndTechs from './components/ToolsAndTechs';
 import type { Tool } from './components/ToolsAndTechs';
 import ImageSlider, { type ImageSliderProps } from './components/ImageSlider'
 import CandidateCard from './components/CandidateCard';
-import FunctionSelector from './components/FunctionSelector';
-import FindDuplicatedItems from './pages/findDuplicatedItems';
 
+const FindDuplicatedItems = lazy(() => import('./pages/findDuplicatedItems'));
+const ArrayItemsWithDelay = lazy(() => import('./pages/arrayItemsWithDelay'));
 
 const projectTools: Tool[] = [
   { name: 'Figma', url: 'https://www.figma.com', description: 'A collaborative interface design tool.' },
@@ -29,18 +30,13 @@ const projectImages: ImageSliderProps[] = [
 ];
 
 const functionItems = [
-  { id: 1, label: "Find Duplicated Items" },
-  { id: 2, label: "Delay to display" },
-  { id: 3, label: "React Flex Page" },
-  { id: 4, label: "Function" },
-  { id: 5, label: "Function" },
+  { id: 1, label: "Find Duplicated Items", path: "/find-duplicated-items" },
+  { id: 2, label: "Delay to display", path: "/array-items-with-delay" },
 ];
 
 function App() {
-  const [selectedFunction, setSelectedFunction] = useState(2);
-
   return (
-    <>
+    <BrowserRouter>
       <Header />
 
       <div className='max-w-5xl m-auto p-8'>
@@ -50,23 +46,43 @@ function App() {
               <p>This is a Metrobi technical challenge made with React and a lot of TypeScript by Ediklecio.</p>
               <a
                 href="https://github.com/ediklecio/metrobi"
-                className="block mt-4 text-blue-600 hover:underline hover:text-blue-800 transition-colors"
+                className="block mt-4 text-blue-600 hover:underline hover:text-blue-800 transition-colors break-all"
               >
                 github.com/ediklecio/metrobi
                 <HiOutlineArrowTopRightOnSquare className="inline ml-1" />
               </a>
             </div>
             <div className="bg-gray-200 p-4 mt-4 rounded-md">
-              <FunctionSelector
-                items={functionItems}
-                selectedId={selectedFunction}
-                onSelect={setSelectedFunction}
-              />
+              <nav>
+                <ul className="space-y-2">
+                  {functionItems.map((item) => (
+                    <li key={item.id}>
+                      <NavLink
+                        to={item.path}
+                        className={({ isActive }) =>
+                          `block p-2 rounded-md transition-colors ${isActive
+                            ? 'bg-blue-500 text-white'
+                            : 'bg-gray-300 hover:bg-gray-400'
+                          }`
+                        }
+                      >
+                        {item.label}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
           <div className="w-[70%] flex flex-col gap-4">
             <div className="bg-gray-200 p-4 rounded-md">
-              <FindDuplicatedItems />
+              <Suspense fallback={<div className="text-center p-4">Carregando...</div>}>
+                <Routes>
+                  <Route path="/" element={<Navigate to="/find-duplicated-items" replace />} />
+                  <Route path="/find-duplicated-items" element={<FindDuplicatedItems />} />
+                  <Route path="/array-items-with-delay" element={<ArrayItemsWithDelay />} />
+                </Routes>
+              </Suspense>
             </div>
             <div className="mt-4">
               <CandidateCard />
@@ -85,7 +101,7 @@ function App() {
       </div>
 
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
