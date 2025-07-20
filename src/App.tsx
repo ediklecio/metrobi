@@ -11,7 +11,7 @@ import FunctionList from './components/FunctionList';
 
 const FindDuplicatedItems = lazy(() => import('./pages/findDuplicatedItems'));
 const ArrayItemsWithDelay = lazy(() => import('./pages/arrayItemsWithDelay'));
-
+const CodeBlocks = lazy(() => import('./pages/codeBlocks'));
 
 const projectImages: ImageSliderProps[] = [
   {
@@ -53,6 +53,7 @@ function App() {
                   <Route path="/" element={<Navigate to="/find-duplicated-items" replace />} />
                   <Route path="/find-duplicated-items" element={<FindDuplicatedItems />} />
                   <Route path="/array-items-with-delay" element={<ArrayItemsWithDelay />} />
+                  <Route path="/code-blocks" element={<CodeBlocks />} />
                 </Routes>
               </Suspense>
             </div>

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 const functionItems = [
     { id: 1, label: "Find Duplicated Items", path: "/find-duplicated-items" },
     { id: 2, label: "Delay to display", path: "/array-items-with-delay" },
+    { id: 3, label: "Check Brackets", path: "/code-blocks" },
 ];
 
 const FunctionList = () => {
