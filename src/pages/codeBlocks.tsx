@@ -11,7 +11,7 @@ const CodeBlocks = () => {
 
     return (
         <>
-            <h1 className="text-2xl font-bold mb-2 text-gray-800">04 - Bracket Validator</h1>
+            <h1 className="text-2xl font-bold mb-2 text-gray-800">4 - Bracket Validator</h1>
             <p className="text-sm text-gray-600 mb-4">
                 4: Write an efficient method that tells us whether or not an input string brackets {JSON.stringify("({, }, (, ), [, ]) opened and closed properly. Example: {[]} => true, {(])} => false, {([)]} => false")}
             </p>

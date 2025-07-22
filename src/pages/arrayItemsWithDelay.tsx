@@ -20,7 +20,11 @@ const ArrayItemsWithDelay = () => {
 
   return (
     <div>
-      <h3 className="font-bold mb-2 text-gray-800">Delayed Display</h3>
+      <h3 className="text-2xl font-bold mb-2 text-gray-800">4 - Delayed Display</h3>
+      <p className="text-sm mb-4">
+        Write an efficient method that tells us whether or not an input string brackets 
+        {`("{", "}", "(", ")", "[", "]") opened and closed properly. Example: “{[]}” => true, “{(])}” => false,“{([)]}” => false`}
+      </p>
       <p className="text-sm mb-4">
         Click the button to display items from an array with an exponentially increasing delay (1s, 2s, 4s, ...).
       </p>
@@ -32,7 +36,7 @@ const ArrayItemsWithDelay = () => {
         {isRunning ? 'Running...' : 'Start Delay'}
       </button>
       <div className="mt-4 p-4 bg-gray-100 rounded-md min-h-[100px]">
-        <h4 className="font-semibold text-gray-700">Output:</h4>
+        <h2 className="text-2xl font-bold mb-2 text-gray-800">Result</h2>
         <ul className="list-disc list-inside mt-2 text-gray-800">
           {output.map((item, index) => <li key={index}>{item}</li>)}
         </ul>

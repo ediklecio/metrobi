@@ -13,7 +13,7 @@ function CarrotsLimit() {
 
     return (
         <>
-            <h3 className="font-bold mb-2 text-gray-800">7 - Carrots Limit</h3>
+            <h3 className="text-2xl font-bold mb-2 text-gray-800">7 - Carrots Limit</h3>
             <div className="mb-4">
                 <form
                     onSubmit={(e) => handleCheckValue(e)}

@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 const functionItems = [
-    { id: 1, label: "Find Duplicated Items", path: "/find-duplicated-items" },
-    { id: 2, label: "Delay to display", path: "/array-items-with-delay" },
-    { id: 3, label: "Check Brackets", path: "/code-blocks" },
-    { id: 4, label: "07 - Carrots Limit", path: "/carrots-limit" },
+    { id: 1, label: "1 - Find Duplicated Items", path: "/find-duplicated-items" },
+    { id: 2, label: "2 - Delay to display", path: "/array-items-with-delay" },
+    { id: 3, label: "4 - Check Brackets", path: "/code-blocks" },
+    { id: 4, label: "7 - Carrots Limit", path: "/carrots-limit" },
 ];
 
 const FunctionList = () => {

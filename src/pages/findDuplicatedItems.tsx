@@ -16,7 +16,7 @@ const FindDuplicatedItems = () => {
 
     return (
         <>
-            <h3 className="font-bold mb-2 text-gray-800">1 - Find Duplicates Service</h3>
+            <h1 className="text-2xl font-bold mb-2 text-gray-800">1 - Find Duplicates Service</h1>
             <div className="mb-4">
                 <form
                     onSubmit={(e) => handleFindDuplicates(e)}
@@ -46,6 +46,8 @@ const FindDuplicatedItems = () => {
                 </form>
             </div>
             <div className="text-sm space-y-1 mt-8">
+                <h2 className="text-2xl font-bold mb-2 text-gray-800">Result</h2>
+
                 {duplicatedItems.length > 0 ? (
                     <>
                         <p className="text-green-600">Duplicates found!</p>
